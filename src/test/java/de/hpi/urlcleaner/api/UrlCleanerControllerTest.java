@@ -10,6 +10,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.net.MalformedURLException;
+
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -30,7 +32,7 @@ public class UrlCleanerControllerTest {
     private UrlCleanerService urlCleanerService;
 
     @Before
-    public void setup() {
+    public void setup() throws MalformedURLException {
         given(urlCleanerService.cleanUrl(anyString(), anyLong())).willReturn("{\"oracleShopId\" : 123}");
     }
 
